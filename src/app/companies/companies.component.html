@@ -1,47 +1,39 @@
-<mdb-card class="top-card">
-  <mdb-card-body>
-    <mdb-card-title>
-      <div class="row">
-        <div class="col-md-8"><h2>Companies</h2></div>
-        <div class="col-md-4 ml-auto">
-          <div class="md-form search-field" [hidden]="loading">
-            <input type="text" [(ngModel)]="searchText" class="form-control mr-sm-2" id="search" mdbInput>
-            <label for="search">Search</label>
-          </div>
-        </div>
-      </div>
-    </mdb-card-title>
-
-    <div class="d-flex align-items-center" *ngIf="loading">
-      Loading companies...
-      <div class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></div>
+<div class="row">
+  <div class="col-md-8"><h2>Companies</h2></div>
+  <div class="col-md-4 ml-auto">
+    <div class="md-form search-field" [hidden]="loading">
+      <input type="text" [(ngModel)]="searchText" class="form-control mr-sm-2" id="search" mdbInput>
+      <label for="search">Search</label>
     </div>
+  </div>
+</div>
 
-    <mdb-card-text>
-      <div class="container" [hidden]="loading">
-        <table mdbTable class="z-depth-1" striped="true">
-          <thead>
-          <tr>
-            <th *ngFor="let head of headElements; let i = index" aria-controls="tableSortExample" scope="col"
-                [mdbTableSort]="elements" [sortBy]="headElements[i]">
-              {{head | titlecase}}
-              <mdb-icon fas icon="sort"></mdb-icon>
-            </th>
-          </tr>
-          </thead>
+<div class="spinner-div d-flex align-items-center" *ngIf="loading">
+  Loading companies...
+  <div class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></div>
+</div>
 
-          <tbody *ngIf="!loading">
-          <tr *ngFor="let company of elements">
-            <td class="main-element" scope="row" width="40%"><a
-              routerLink="/companies/{{company.name}}">{{company.name}}</a></td>
-            <td>{{company["top-location"]}}</td>
-            <td>{{company["top-year"]}}</td>
-            <td>{{company["most-recent-year"]}}</td>
-            <td>{{company.documents}}</td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </mdb-card-text>
-  </mdb-card-body>
-</mdb-card>
+<div class="container" [hidden]="loading">
+  <table mdbTable class="z-depth-1 table" striped="true">
+    <thead>
+    <tr>
+      <th *ngFor="let head of headElements; let i = index" aria-controls="tableSortExample" scope="col"
+          [mdbTableSort]="elements" [sortBy]="headElements[i]">
+        {{head | titlecase}}
+        <mdb-icon fas icon="sort"></mdb-icon>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody *ngIf="!loading">
+    <tr *ngFor="let company of elements">
+      <td class="main-element" scope="row" width="40%"><a
+        routerLink="/companies/{{company.name}}">{{company.name}}</a></td>
+      <td>{{company["top-location"]}}</td>
+      <td>{{company["top-year"]}}</td>
+      <td>{{company["most-recent-year"]}}</td>
+      <td>{{company.documents}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

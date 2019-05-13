@@ -14,12 +14,14 @@ html, body {
   background: $amplyfi-blue;
 }
 
-h2, h3, h4, h5 {
-  color: $amplyfi-blue
+h3, h4, h5 {
+  color: $amplyfi-blue;
 }
 
 h2 {
-  margin-bottom: 3rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 
 h4 {
@@ -81,10 +83,13 @@ a:hover {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.10), 0 2px 10px 0 rgba(0, 0, 0, 0.08)
 }
 
+.spinner-div{
+  margin-top: 2rem;
+  color: white;
+}
 
 .spinner-grow {
   margin-left: 0.5rem;
-  color: $amplyfi-blue;
 }
 
 

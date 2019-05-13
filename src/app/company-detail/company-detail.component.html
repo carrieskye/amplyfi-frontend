@@ -1,15 +1,17 @@
-<mdb-card class="top-card">
+<h3 class="h3-white">{{name}}</h3>
+
+
+<div class="spinner-div d-flex align-items-center" *ngIf="loading">
+  Loading company details...
+  <div class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></div>
+</div>
+
+<mdb-card class="sub-card" *ngIf="!loading">
   <mdb-card-body>
     <mdb-card-title>
-      <h3 class="title-with-margin">{{name}}</h3>
     </mdb-card-title>
+    <mdb-card-text>
 
-    <div class="d-flex align-items-center" *ngIf="loading">
-      Loading company details...
-      <div class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></div>
-    </div>
-
-    <mdb-card-text *ngIf="!loading">
       <div class="general-info">
         <div class="company-property">
           <h4>Period</h4>
@@ -42,6 +44,7 @@
         </div>
       </div>
 
+
       <h4>Documents</h4>
       <ul class="docs">
         <li *ngFor="let doc of company.docs">
@@ -62,10 +65,12 @@
           </a>
         </li>
       </ul>
-    </mdb-card-text>
 
-    <button type="button" class="btn btn-light" (click)="goBack()" *ngIf="!loading">
-      Back
-    </button>
+
+      <button type="button" class="btn btn-light" (click)="goBack()" *ngIf="!loading">
+        Back
+      </button>
+
+    </mdb-card-text>
   </mdb-card-body>
 </mdb-card>

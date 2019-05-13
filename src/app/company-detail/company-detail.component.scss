@@ -64,7 +64,6 @@ ul.value-list li:last-child:after {
 }
 
 .company-property-name {
-  //.docs .card .card-body .company-property-name {
   width: 7rem;
 }
 
@@ -80,11 +79,6 @@ ul.value-list li:last-child:after {
 .company-property-value {
   text-align: justify;
 }
-
-//.docs .card .card-body .company-property-value {
-//  font-size: 0.8rem;
-//  margin-bottom: 0;
-//}
 
 .doc-summary {
   font-size: 0.8rem;
@@ -107,10 +101,6 @@ ul.value-list li:last-child:after {
   color: white;
 }
 
-.general-info {
-  margin-bottom: 4rem;
-}
-
 .general-info .company-property-value {
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
@@ -119,6 +109,16 @@ ul.value-list li:last-child:after {
 
 .title-with-margin {
   margin-bottom: 2rem !important;
+}
+
+.h3-white {
+  color: white;
+  margin-bottom: 2rem;
+}
+
+h4 {
+  font-size: 1.2rem !important;
+  font-weight: 900 !important;
 }
 
 @media only screen and (max-width: 1140px) {

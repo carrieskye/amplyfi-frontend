@@ -83,10 +83,18 @@ ul.value-list li:last-child:after {
   text-align: justify;
 }
 
+.pagination {
+  margin-bottom: 2rem;
+}
+
+.pagination.pg-blue .page-item .page-link {
+  color: white;
+}
+
 .pagination.pg-blue .page-item.active .page-link,
 .pagination.pg-blue .page-item.active:hover .page-link {
-  background-color: $amplyfi-blue;
-  color: white
+  background-color: white;
+  color: $amplyfi-blue;
 }
 
 .pagination.pg-blue .page-item:hover .page-link {
