@@ -1,0 +1,102 @@
+$amplyfi-blue: #032539;
+$amplyfi-pink: #e63c50;
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:hover {
+  color: #111111;
+  text-decoration: none;
+}
+
+
+.row {
+  width: 100%;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+
+.container {
+  padding: 2px 16px;
+}
+
+
+ul.value-list {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+ul.value-list li {
+  display: inline;
+}
+
+ul.value-list li::after {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 2.5px;
+  -webkit-border-radius: 2.5px;
+  border-radius: 2.5px;
+  margin-bottom: 0.2rem;
+  margin-left: 0.6rem;
+  margin-right: 0.5rem;
+  background-color: $amplyfi-pink;
+}
+
+ul.value-list li:last-child:after {
+  display: none;
+}
+
+.docs .card {
+  margin: 2rem 2rem 3rem;
+}
+
+.docs .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.docs .card:hover h4 {
+  color: $amplyfi-pink !important;
+}
+
+.docs .card .card-text {
+  text-align: justify;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.docs .card .card-body .doc-property-name {
+  width: 7rem;
+}
+
+.doc-summary {
+  text-align: justify;
+}
+
+.col-md-10 {
+  flex: 0 0 90%;
+  max-width: none;
+}
+
+.pagination.pg-blue .page-item.active .page-link,
+.pagination.pg-blue .page-item.active:hover .page-link {
+  background-color: $amplyfi-blue;
+  color: white
+}
+
+.pagination.pg-blue .page-item:hover .page-link {
+  background-color: $amplyfi-pink;
+  color: white;
+}
+
+@media only screen and (max-width: 1140px) {
+  .col-lg-10 {
+    flex: 0 0 100%;
+  }
+}

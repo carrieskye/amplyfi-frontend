@@ -1,0 +1,121 @@
+<mdb-card class="top-card">
+  <mdb-card-body>
+    <div class="d-flex align-items-center" *ngIf="loading">
+      Loading documents...
+      <div class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></div>
+    </div>
+
+    <mdb-card-title *ngIf="!loading">
+      <h3>{{doc.m_szDocTitle}}</h3>
+      <div class="tags">
+        <span *ngIf="doc.m_szGeo1" class="tag">{{doc.m_szGeo1}}</span>
+        <span *ngIf="doc.m_szYear" class="tag">{{doc.m_szYear}}</span>
+        <span *ngIf="doc.m_szSourceType" class="tag">{{doc.m_szSourceType}}</span>
+      </div>
+    </mdb-card-title>
+
+    <mdb-card-text *ngIf="!loading">
+      <div class="doc-property" *ngIf="doc.m_Companies.length > 0">
+        <div class="doc-property-label">Companies</div>
+        <div class="doc-property-value">
+          <ul class="value-list">
+            <li *ngFor="let company of doc.m_Companies"><a routerLink="/companies/{{company}}">{{company}}</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doc-property" *ngIf="doc.m_Places.length > 0">
+        <div class="doc-property-label">Places</div>
+        <div class="doc-property-value">
+          <ul class="value-list">
+            <li *ngFor="let place of doc.m_Places">{{place}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doc-property" *ngIf="doc.m_People.length > 0">
+        <div class="doc-property-label">People</div>
+        <div class="doc-property-value">
+          <ul class="value-list">
+            <li *ngFor="let person of doc.m_People">{{person}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doc-property" *ngIf="doc.m_SocialTags.length > 0">
+        <div class="doc-property-label">Social tags</div>
+        <div class="doc-property-value">
+          <ul class="value-list">
+            <li *ngFor="let socialTag of doc.m_SocialTags">{{socialTag}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doc-property" *ngIf="doc.m_Topics.length > 0">
+        <div class="doc-property-label">Topics</div>
+        <div class="doc-property-value">
+          <ul class="value-list">
+            <li *ngFor="let topic of doc.m_Topics">{{topic}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doc-property" *ngIf="doc.m_Industry.length > 0">
+        <div class="doc-property-label">Industries</div>
+        <div class="doc-property-value">
+          <ul class="value-list">
+            <li *ngFor="let industry of doc.m_Industry">{{industry}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doc-property" *ngIf="doc.m_Technology.length > 0">
+        <div class="doc-property-label">Technologies</div>
+        <div class="doc-property-value">
+          <ul class="value-list">
+            <li *ngFor="let technology of doc.m_Technology">{{technology}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doc-property" *ngIf="doc.m_BiGrams.length > 0">
+        <div class="doc-property-label">BiGrams</div>
+        <div class="doc-property-value">
+          <ul class="value-list">
+            <li *ngFor="let bigram of doc.m_BiGrams; let i = index">{{bigram}}<span
+              *ngIf="doc.m_BiCnt[i]"> ({{doc.m_BiCnt[i]}})</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doc-property" *ngIf="doc.m_TriGrams.length > 0">
+        <div class="doc-property-label">TriGrams</div>
+        <div class="doc-property-value">
+          <ul class="value-list">
+            <li *ngFor="let bigram of doc.m_TriGrams; let i = index">{{bigram}}<span
+              *ngIf="doc.m_TriCnt[i]"> ({{doc.m_TriCnt[i]}})</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doc-property" *ngIf="doc.m_szDocSumamry">
+        <div class="doc-property-label">Summary</div>
+        <div class="doc-property-value">{{doc.m_szDocSumamry}}</div>
+      </div>
+
+      <div class="doc-property" *ngIf="doc.m_szDocBody">
+        <div class="doc-property-label">Body<span *ngIf="doc.m_iDocBodyWordCnt"> ({{doc.m_iDocBodyWordCnt}}
+          words)</span>
+        </div>
+        <div class="doc-property-value">{{doc.m_szDocBody}}</div>
+      </div>
+
+      <div class="doc-property" *ngIf="doc.m_szSrcUrl">
+        <div class="doc-property-label">Source</div>
+        <div class="doc-property-value"><a href="{{doc.m_szSrcUrl}}">{{doc.m_szSrcUrl}}</a></div>
+      </div>
+
+      <button type="button" class="btn btn-light" (click)="goBack()">Back to overview</button>
+    </mdb-card-text>
+  </mdb-card-body>
+</mdb-card>

@@ -1,0 +1,22 @@
+$amplyfi-blue: #032539;
+$amplyfi-pink: #e63c50;
+
+
+.md-form input[type=text]:focus:not([readonly]) + label {
+  color: $amplyfi-pink;
+}
+
+
+.main-element a {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.main-element a:hover {
+  background-color: $amplyfi-pink;
+  color: white;
+}
+
+.search-field {
+  margin-top: 0;
+}

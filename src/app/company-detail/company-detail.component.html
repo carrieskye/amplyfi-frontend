@@ -1,0 +1,99 @@
+<mdb-card class="top-card">
+  <mdb-card-body>
+    <mdb-card-title>
+      <h3>{{name}}</h3>
+    </mdb-card-title>
+
+    <div class="d-flex align-items-center" *ngIf="loading">
+      Loading documents...
+      <div class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></div>
+    </div>
+
+    <mdb-card-text *ngIf="!loading">
+      <ul class="docs">
+        <li *ngFor="let doc of company.docs">
+          <a routerLink="/docs/{{doc.m_szDocID}}">
+            <mdb-card class="sub-card">
+              <mdb-card-body>
+                <mdb-card-title>
+                  <h4>{{doc.m_szDocTitle}}<span *ngIf="doc.m_szYear"> ({{doc.m_szYear}})</span></h4>
+                </mdb-card-title>
+                <mdb-card-text>
+                  <div class="doc-property-value row justify-content-start" *ngIf="doc.m_Companies.length > 0">
+                    <div class="doc-property-name col-12 col-md-auto">Companies:</div>
+                    <div class="col col-md-10">
+                      <ul class="value-list">
+                        <li *ngFor="let company of doc.m_Companies">{{company}}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="doc-property-value row justify-content-start" *ngIf="doc.m_People.length > 0">
+                    <div class="doc-property-name col-12 col-md-auto">People:</div>
+                    <div class="col col-md-10">
+                      <ul class="value-list">
+                        <li *ngFor="let person of doc.m_People">{{person}}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="doc-property-value row" *ngIf="doc.m_Places.length > 0">
+                    <div class="doc-property-name col-12 col-md-auto">Places:</div>
+                    <div class="col col-md-10">
+                      <ul class="value-list">
+                        <li *ngFor="let place of doc.m_Places">{{place}}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="doc-property-value row" *ngIf="doc.m_SocialTags.length > 0">
+                    <div class="doc-property-name col-12 col-md-auto">Social tags:</div>
+                    <div class="col col-md-10">
+                      <ul class="value-list">
+                        <li *ngFor="let socialTag of doc.m_SocialTags">{{socialTag}}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="doc-property-value row" *ngIf="doc.m_Topics.length > 0">
+                    <div class="doc-property-name col-12 col-md-auto">Topics:</div>
+                    <div class="col col-md-10">
+                      <ul class="value-list">
+                        <li *ngFor="let topic of doc.m_Topics">{{topic}}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="doc-property-value row" *ngIf="doc.m_Industry.length > 0">
+                    <div class="doc-property-name col-12 col-md-auto">Industries:</div>
+                    <div class="col col-md-10">
+                      <ul class="value-list">
+                        <li *ngFor="let industry of doc.m_Industry">{{industry}}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="doc-property-value row" *ngIf="doc.m_Technology.length > 0">
+                    <div class="doc-property-name col-12 col-md-auto">Technologies:</div>
+                    <div class="col col-md-10">
+                      <ul class="value-list">
+                        <li *ngFor="let technology of doc.m_Technology">{{technology}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="doc-summary">
+                    {{doc.m_szDocSumamry}}
+                  </div>
+                </mdb-card-text>
+              </mdb-card-body>
+            </mdb-card>
+          </a>
+        </li>
+      </ul>
+    </mdb-card-text>
+
+    <button type="button" class="btn btn-light" (click)="goBack()" *ngIf="!loading">
+      Back to overview
+    </button>
+  </mdb-card-body>
+</mdb-card>

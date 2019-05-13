@@ -1,0 +1,59 @@
+$amplyfi-blue: #032539;
+$amplyfi-pink: #e63c50;
+
+::ng-deep .amplyfi-blue nav {
+  background-color: $amplyfi-blue !important;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  box-shadow: none;
+  padding: 0.5rem 0;
+}
+
+::ng-deep .container {
+  margin: 0;
+  max-width: 100rem;
+  padding: 0 3px;
+}
+
+::ng-deep mdb-navbar-brand {
+  margin: 0 1rem 0 0;
+}
+
+::ng-deep .navbar.navbar-dark form .md-form input:focus:not([readonly]) {
+  border-color: $amplyfi-pink;
+}
+
+::ng-deep .md-form input[type=text]:focus:not([readonly]) {
+  box-shadow: 0 1px 0 0 $amplyfi-pink;
+  border-bottom: 1px solid $amplyfi-pink;
+}
+
+::ng-deep .card .card-body .card-text {
+  color: $amplyfi-blue;
+}
+
+::ng-deep input:-webkit-autofill,
+::ng-deep input:-webkit-autofill:hover,
+::ng-deep input:-webkit-autofill:focus,
+::ng-deep input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 10000px white inset !important;
+}
+
+.container-fluid {
+  width: 90%;
+}
+
+#amplyfi-logo {
+  width: 13rem;
+}
+
+.navbar-nav li:focus {
+  outline: -webkit-focus-ring-color auto 0;
+}
+
+@media (min-width: 992px) {
+  ::ng-deep .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.5rem !important;
+  }
+}

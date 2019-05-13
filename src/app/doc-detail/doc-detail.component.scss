@@ -1,0 +1,57 @@
+$amplyfi-blue: #032539;
+$amplyfi-pink: #e63c50;
+
+.doc-property {
+  margin-bottom: 1rem;
+}
+
+.doc-property-label {
+  font-weight: bold;
+}
+
+.doc-property-value {
+  text-align: justify;
+}
+
+a {
+  color: $amplyfi-blue;
+}
+
+a:hover {
+  color: $amplyfi-pink;
+}
+
+ul.value-list {
+  margin-top: 0;
+  padding-left: 0;
+}
+
+ul.value-list li {
+  display: inline;
+}
+
+ul.value-list li::after {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  -moz-border-radius: 2.5px;
+  -webkit-border-radius: 2.5px;
+  border-radius: 2.5px;
+  margin-bottom: 0.2rem;
+  margin-left: 0.6rem;
+  margin-right: 0.5rem;
+  background-color: $amplyfi-pink;
+}
+
+ul.value-list li:last-child:after {
+  display: none;
+}
+
+
+.tags {
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+
