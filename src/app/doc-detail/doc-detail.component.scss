@@ -2,7 +2,8 @@ $amplyfi-blue: #032539;
 $amplyfi-pink: #e63c50;
 
 .doc-property {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
 }
 
 .doc-property-label {
@@ -38,9 +39,7 @@ ul.value-list li::after {
   -moz-border-radius: 2.5px;
   -webkit-border-radius: 2.5px;
   border-radius: 2.5px;
-  margin-bottom: 0.2rem;
-  margin-left: 0.6rem;
-  margin-right: 0.5rem;
+  margin: 0 0.7rem 0.1rem;
   background-color: $amplyfi-pink;
 }
 
@@ -48,10 +47,8 @@ ul.value-list li:last-child:after {
   display: none;
 }
 
-
 .tags {
-  margin-top: -1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 

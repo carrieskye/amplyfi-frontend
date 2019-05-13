@@ -11,7 +11,7 @@ import {Company} from "../company";
 export class CompaniesComponent implements OnInit {
   @ViewChild(MdbTableDirective) mdbTable: MdbTableDirective;
   elements: any = [];
-  headElements = ['name', 'oldest', 'latest', 'count'];
+  headElements = ['name', 'top-location', 'top-year', 'most-recent-year', 'documents'];
 
   searchText: string = '';
   previous: string;
@@ -41,11 +41,26 @@ export class CompaniesComponent implements OnInit {
 
   tableSettings(): void {
     for (let i = 1; i < this.companies.length; i++) {
+      const years = this.companies[i].years;
+      let top_year = "";
+      let recent_year = "";
+      if (Object.keys(years).length > 0) {
+        top_year = Object.keys(years).reduce((a, b) => years[a] > years[b] ? a : b);
+        recent_year = Object.keys(years).reduce((a, b) => a > b ? a : b);
+      }
+
+      const locations = this.companies[i].locations;
+      let top_location = "";
+      if (Object.keys(locations).length > 0) {
+        top_location = Object.keys(locations).reduce((a, b) => locations[a] > locations[b] ? a : b);
+      }
+
       this.elements.push({
         name: this.companies[i].name,
-        oldest: this.companies[i].min_year,
-        latest: this.companies[i].max_year,
-        count: this.companies[i].docs.length
+        "top-location": top_location,
+        "top-year": top_year,
+        "most-recent-year": recent_year,
+        documents: this.companies[i].ids.length
       });
     }
 

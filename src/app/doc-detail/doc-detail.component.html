@@ -28,7 +28,7 @@
         <div class="doc-property-label">Places</div>
         <div class="doc-property-value">
           <ul class="value-list">
-            <li *ngFor="let place of doc.m_Places">{{place}}</li>
+            <li *ngFor="let place of doc.m_Places"><a>{{place}}</a></li>
           </ul>
         </div>
       </div>
@@ -115,7 +115,7 @@
         <div class="doc-property-value"><a href="{{doc.m_szSrcUrl}}">{{doc.m_szSrcUrl}}</a></div>
       </div>
 
-      <button type="button" class="btn btn-light" (click)="goBack()">Back to overview</button>
+      <button type="button" class="btn btn-light" (click)="goBack()">Back</button>
     </mdb-card-text>
   </mdb-card-body>
 </mdb-card>

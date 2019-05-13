@@ -13,8 +13,8 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'docs', component: DocsComponent},
   {path: 'docs/:id', component: DocDetailComponent},
-  {path: 'companies', component: CompaniesComponent},
   {path: 'companies/:name', component: CompanyDetailComponent},
+  {path: 'companies', component: CompaniesComponent},
   {path: 'places', component: PlacesComponent},
   {path: 'people', component: PeopleComponent},
 ];

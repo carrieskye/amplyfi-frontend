@@ -32,11 +32,12 @@
 
           <tbody *ngIf="!loading">
           <tr *ngFor="let company of elements">
-            <td class="main-element" scope="row" width="50%"><a
+            <td class="main-element" scope="row" width="40%"><a
               routerLink="/companies/{{company.name}}">{{company.name}}</a></td>
-            <td>{{company.oldest}}</td>
-            <td>{{company.latest}}</td>
-            <td>{{company.count}}</td>
+            <td>{{company["top-location"]}}</td>
+            <td>{{company["top-year"]}}</td>
+            <td>{{company["most-recent-year"]}}</td>
+            <td>{{company.documents}}</td>
           </tr>
           </tbody>
         </table>

@@ -15,7 +15,7 @@
             <mdb-card class="sub-card">
               <mdb-card-body>
                 <mdb-card-title>
-                  <h4>{{doc.m_szDocTitle}}<span *ngIf="doc.m_szYear"> ({{doc.m_szYear}})</span></h4>
+                  <h5>{{doc.m_szDocTitle}}<span *ngIf="doc.m_szYear"> ({{doc.m_szYear}})</span></h5>
                 </mdb-card-title>
                 <mdb-card-text>
                   <div class="doc-property-value row justify-content-start" *ngIf="doc.m_Companies.length > 0">
@@ -80,6 +80,8 @@
                       </ul>
                     </div>
                   </div>
+                </mdb-card-text>
+                <mdb-card-text>
                   <div class="doc-summary">
                     {{doc.m_szDocSumamry}}
                   </div>
@@ -109,13 +111,16 @@
         <li class="page-item" *ngIf="currentPage < 3" [ngClass]="(currentPage==2)?'active':''">
           <a class="page-link" (click)="updatePage(2)">2</a>
         </li>
-        <li class="page-item" *ngIf="currentPage < 3 && totalNumberOfPages > 2" [ngClass]="(currentPage==3)?'active':''">
+        <li class="page-item" *ngIf="currentPage < 3 && totalNumberOfPages > 2"
+            [ngClass]="(currentPage==3)?'active':''">
           <a class="page-link" (click)="updatePage(3)">3</a>
         </li>
-        <li class="page-item" *ngIf="currentPage < 3 && totalNumberOfPages > 3" [ngClass]="(currentPage==4)?'active':''">
+        <li class="page-item" *ngIf="currentPage < 3 && totalNumberOfPages > 3"
+            [ngClass]="(currentPage==4)?'active':''">
           <a class="page-link" (click)="updatePage(4)">4</a>
         </li>
-        <li class="page-item" *ngIf="currentPage < 3 && totalNumberOfPages > 4" [ngClass]="(currentPage==5)?'active':''">
+        <li class="page-item" *ngIf="currentPage < 3 && totalNumberOfPages > 4"
+            [ngClass]="(currentPage==5)?'active':''">
           <a class="page-link" (click)="updatePage(5)">5</a>
         </li>
 
@@ -136,15 +141,18 @@
           <a class="page-link" (click)="updatePage(currentPage + 2)">{{currentPage + 2}}</a>
         </li>
 
-        <li class="page-item" *ngIf="currentPage >= 3 && currentPage >= totalNumberOfPages - 2 && totalNumberOfPages > 4"
+        <li class="page-item"
+            *ngIf="currentPage >= 3 && currentPage >= totalNumberOfPages - 2 && totalNumberOfPages > 4"
             [ngClass]="(currentPage==totalNumberOfPages-4)?'active':''">
           <a class="page-link" (click)="updatePage(totalNumberOfPages - 4)">{{totalNumberOfPages - 4}}</a>
         </li>
-        <li class="page-item" *ngIf="currentPage >= 3 && currentPage >= totalNumberOfPages - 2 && totalNumberOfPages > 3"
+        <li class="page-item"
+            *ngIf="currentPage >= 3 && currentPage >= totalNumberOfPages - 2 && totalNumberOfPages > 3"
             [ngClass]="(currentPage==totalNumberOfPages-3)?'active':''">
           <a class="page-link" (click)="updatePage(totalNumberOfPages - 3)">{{totalNumberOfPages - 3}}</a>
         </li>
-        <li class="page-item" *ngIf="currentPage >= 3 && currentPage >= totalNumberOfPages - 2 && totalNumberOfPages > 2"
+        <li class="page-item"
+            *ngIf="currentPage >= 3 && currentPage >= totalNumberOfPages - 2 && totalNumberOfPages > 2"
             [ngClass]="(currentPage==totalNumberOfPages-2)?'active':''">
           <a class="page-link" (click)="updatePage(totalNumberOfPages - 2)">{{totalNumberOfPages - 2}}</a>
         </li>

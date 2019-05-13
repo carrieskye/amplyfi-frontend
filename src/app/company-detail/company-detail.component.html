@@ -1,88 +1,60 @@
 <mdb-card class="top-card">
   <mdb-card-body>
     <mdb-card-title>
-      <h3>{{name}}</h3>
+      <h3 class="title-with-margin">{{name}}</h3>
     </mdb-card-title>
 
     <div class="d-flex align-items-center" *ngIf="loading">
-      Loading documents...
+      Loading company details...
       <div class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></div>
     </div>
 
     <mdb-card-text *ngIf="!loading">
+      <div class="general-info">
+        <div class="company-property">
+          <h4>Period</h4>
+          <div class="company-property-value">
+            <div *ngIf="oldest != newest">{{oldest}} - {{ newest}}</div>
+            <div *ngIf="oldest == newest">{{oldest}}</div>
+          </div>
+        </div>
+
+        <div class="company-property">
+          <h4>Locations</h4>
+          <div class="company-property-value">
+            <ul class="value-list">
+              <li *ngFor="let location of company.locations | keyvalue: valueAscOrder">
+                {{location.key}} ({{location.value}})
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="company-property">
+          <h4>Competitors</h4>
+          <div class="company-property-value">
+            <ul class="value-list">
+              <li *ngFor="let competitor of company.competitors | keyvalue: valueAscOrder">
+                <a routerLink="/companies/{{competitor.key}}">{{competitor.key}}</a> ({{competitor.value}})
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h4>Documents</h4>
       <ul class="docs">
         <li *ngFor="let doc of company.docs">
-          <a routerLink="/docs/{{doc.m_szDocID}}">
+          <a routerLink="/docs/{{doc.doc_id}}">
             <mdb-card class="sub-card">
               <mdb-card-body>
                 <mdb-card-title>
-                  <h4>{{doc.m_szDocTitle}}<span *ngIf="doc.m_szYear"> ({{doc.m_szYear}})</span></h4>
+                  <h5>{{doc.title}}<span *ngIf="doc.year"> (<span
+                    *ngIf="doc.location">{{doc.location}}, </span>{{doc.year}})</span></h5>
                 </mdb-card-title>
                 <mdb-card-text>
-                  <div class="doc-property-value row justify-content-start" *ngIf="doc.m_Companies.length > 0">
-                    <div class="doc-property-name col-12 col-md-auto">Companies:</div>
-                    <div class="col col-md-10">
-                      <ul class="value-list">
-                        <li *ngFor="let company of doc.m_Companies">{{company}}</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="doc-property-value row justify-content-start" *ngIf="doc.m_People.length > 0">
-                    <div class="doc-property-name col-12 col-md-auto">People:</div>
-                    <div class="col col-md-10">
-                      <ul class="value-list">
-                        <li *ngFor="let person of doc.m_People">{{person}}</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="doc-property-value row" *ngIf="doc.m_Places.length > 0">
-                    <div class="doc-property-name col-12 col-md-auto">Places:</div>
-                    <div class="col col-md-10">
-                      <ul class="value-list">
-                        <li *ngFor="let place of doc.m_Places">{{place}}</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="doc-property-value row" *ngIf="doc.m_SocialTags.length > 0">
-                    <div class="doc-property-name col-12 col-md-auto">Social tags:</div>
-                    <div class="col col-md-10">
-                      <ul class="value-list">
-                        <li *ngFor="let socialTag of doc.m_SocialTags">{{socialTag}}</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="doc-property-value row" *ngIf="doc.m_Topics.length > 0">
-                    <div class="doc-property-name col-12 col-md-auto">Topics:</div>
-                    <div class="col col-md-10">
-                      <ul class="value-list">
-                        <li *ngFor="let topic of doc.m_Topics">{{topic}}</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="doc-property-value row" *ngIf="doc.m_Industry.length > 0">
-                    <div class="doc-property-name col-12 col-md-auto">Industries:</div>
-                    <div class="col col-md-10">
-                      <ul class="value-list">
-                        <li *ngFor="let industry of doc.m_Industry">{{industry}}</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="doc-property-value row" *ngIf="doc.m_Technology.length > 0">
-                    <div class="doc-property-name col-12 col-md-auto">Technologies:</div>
-                    <div class="col col-md-10">
-                      <ul class="value-list">
-                        <li *ngFor="let technology of doc.m_Technology">{{technology}}</li>
-                      </ul>
-                    </div>
-                  </div>
                   <div class="doc-summary">
-                    {{doc.m_szDocSumamry}}
+                    {{doc.summary}}
                   </div>
                 </mdb-card-text>
               </mdb-card-body>
@@ -93,7 +65,7 @@
     </mdb-card-text>
 
     <button type="button" class="btn btn-light" (click)="goBack()" *ngIf="!loading">
-      Back to overview
+      Back
     </button>
   </mdb-card-body>
 </mdb-card>

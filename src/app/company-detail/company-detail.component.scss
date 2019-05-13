@@ -8,23 +8,15 @@ ul {
   padding: 0;
 }
 
-a, a:hover {
-  color: #111111;
-  text-decoration: none;
-}
-
-
 .row {
   width: 100%;
   margin-bottom: 1rem;
   text-align: justify;
 }
 
-
 .container {
   padding: 2px 16px;
 }
-
 
 ul.value-list {
   margin-top: 0;
@@ -54,34 +46,49 @@ ul.value-list li:last-child:after {
 }
 
 .docs .card {
-  margin: 2rem 2rem 3rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 .docs .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.docs .card:hover h4 {
+.docs .card:hover h5 {
   color: $amplyfi-pink !important;
 }
 
 .docs .card .card-text {
   text-align: justify;
   padding: 0.5rem 1rem;
-  font-size: 0.9rem;
 }
 
-.docs .card .card-body .doc-property-name {
+.company-property-name {
+  //.docs .card .card-body .company-property-name {
   width: 7rem;
 }
 
-.doc-summary {
+.company-property {
+  margin-bottom: 2rem;
+  font-size: 0.8rem;
+}
+
+.company-property-label {
+  font-weight: bold;
+}
+
+.company-property-value {
   text-align: justify;
 }
 
-.col-md-10 {
-  flex: 0 0 90%;
-  max-width: none;
+//.docs .card .card-body .company-property-value {
+//  font-size: 0.8rem;
+//  margin-bottom: 0;
+//}
+
+.doc-summary {
+  font-size: 0.8rem;
+  text-align: justify;
 }
 
 .spinner-grow {
@@ -98,6 +105,20 @@ ul.value-list li:last-child:after {
 .pagination.pg-blue .page-item:hover .page-link {
   background-color: $amplyfi-pink;
   color: white;
+}
+
+.general-info {
+  margin-bottom: 4rem;
+}
+
+.general-info .company-property-value {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.title-with-margin {
+  margin-bottom: 2rem !important;
 }
 
 @media only screen and (max-width: 1140px) {

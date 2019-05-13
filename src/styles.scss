@@ -2,6 +2,7 @@
 
 $fa-font-path: "~font-awesome/fonts";
 $amplyfi-blue: #032539;
+$amplyfi-pink: #e63c50;
 
 @import '~font-awesome/scss/font-awesome';
 
@@ -13,7 +14,7 @@ html, body {
   background: $amplyfi-blue;
 }
 
-h2, h3, h4 {
+h2, h3, h4, h5 {
   color: $amplyfi-blue
 }
 
@@ -21,14 +22,13 @@ h2 {
   margin-bottom: 3rem;
 }
 
-h3 {
-  margin-bottom: 2rem;
-}
-
 h4 {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
+h5 {
+  margin-bottom: 0.5rem;
+}
 
 footer {
   text-align: center;
@@ -37,18 +37,43 @@ footer {
   font-size: 0.8rem;
 }
 
+a {
+  color: $amplyfi-blue;
+}
+
+a:hover {
+  color: $amplyfi-pink;
+}
+
+
 .top-card .card-body {
-  padding: 3rem;
+  padding: 4rem;
 }
 
 .sub-card .card-body {
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 0.5rem;
+}
+
+.card .card-body h3 {
+  font-size: 1.2rem !important;
+  font-weight: 900 !important;
+}
+
+.card .card-body h4 {
+  font-size: 1rem !important;
+  font-weight: 900 !important;
+}
+
+.card .card-body h5 {
+  font-size: 0.9rem !important;
+  font-weight: 900 !important;
 }
 
 .tag {
   font-size: 0.8rem;
   padding: 0.4rem 0.5rem;
   margin-right: 0.5rem;
+  margin-top: -1rem !important;
   border-radius: 0.5rem;
   background-color: #e63c50;
   color: white;
@@ -60,4 +85,9 @@ footer {
 .spinner-grow {
   margin-left: 0.5rem;
   color: $amplyfi-blue;
+}
+
+
+.document-list a {
+  font-size: 0.8rem;
 }
